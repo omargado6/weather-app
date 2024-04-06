@@ -14,7 +14,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, A11y } from 'swiper/modules';
 
 
 function Popular() {
@@ -53,17 +53,17 @@ function Popular() {
 
     return (
         <Swiper
-            spaceBetween={25}
+            spaceBetween={30}
             centeredSlides={true}
             autoplay={{
-                delay: 11500,
+                delay: 2500,
                 disableOnInteraction: false,
             }}
             loop={true}
+            modules={[Autoplay, Pagination, Navigation, A11y]}
             pagination={{
                 clickable: true,
             }}
-            modules={[Autoplay, Pagination]}
             className="w-full max-w-screen-2xl"
             breakpoints={{
                 768: {
