@@ -48,7 +48,7 @@ function Popular() {
             }
         }
         fetchWeather();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -56,7 +56,7 @@ function Popular() {
             spaceBetween={30}
             centeredSlides={true}
             autoplay={{
-                delay: 2500,
+                delay: 11500,
                 disableOnInteraction: false,
             }}
             loop={true}
@@ -82,7 +82,7 @@ function Popular() {
             }}>
             {weather.map((city) => (
                 <SwiperSlide className="mb-7" key={city.id}>
-                    <div className="card mx-auto w-96 h-64  shadow-xl image-full " >
+                    <div className="card mx-auto shadow-xl image-full w-96 h-64 max-sm:w-72" >
                         <figure className='h-64' ><img src={city.img} alt={city.name} className="w-96" /></figure>
                         <div className="card-body ">
                             <p className=" text-center text-3xl text-white">{city.name}</p>

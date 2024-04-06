@@ -36,7 +36,7 @@ function Hero() {
         <div className="hero min-h-screen font-serif" style={{ backgroundImage: `url(${image})` }}>
             <div className="hero-overlay bg-opacity-10" style={{ opacity: 1 }}></div>
             <div className="text-center grid grid-cols-4 justify-center items-center h-screen min-w-full">
-                <div className="card shadow-xl col-span-4 w-7/12 max-h-min pt-5 mx-auto max-sm:w-5/6" style={{ backgroundColor: "rgb(33 38 36 / 90%)" }}>
+                <div className="card shadow-xl col-span-4 mx-auto w-7/12 max-sm:w-4/6 max-h-min pt-5" style={{ backgroundColor: "rgb(33 38 36 / 90%)" }}>
                     <div className="search-slide w-fit mx-auto ">
                         <form onSubmit={handleSubmit}>
                             <label className="input input-bordered flex items-center gap-2">
@@ -60,12 +60,12 @@ function Hero() {
                     {weatherinfo && (
                         <div className="card-body text-neutral-300">
                             <div className="card-title text-center space-x-5">
-                                <p className="text-4xl font-bold p-2 max-md:text-3xl max-sm:p-0">{weatherinfo?.main?.temp ? weatherinfo.main.temp.toFixed(0) : ''} °C {weatherinfo?.weather?.[0]?.icon && (<img src={`http://openweathermap.org/img/wn/${weatherinfo.weather[0].icon}@2x.png`} alt="Weather Icon" />)}</p>
-                                <p className="text-4xl font-bold p-2 max-md:text-2xl max-sm:p-0 ">{weatherinfo?.name}</p>
+                                <p className="text-4xl font-bold p-2 max-md:text-3xl  max-sm:p-0 ">{weatherinfo?.main?.temp ? weatherinfo.main.temp.toFixed(0) : ''} °C {weatherinfo?.weather?.[0]?.icon && (<img className="max-sm:hidden" src={`http://openweathermap.org/img/wn/${weatherinfo.weather[0].icon}@2x.png`} alt="Weather Icon" />)}</p>
+                                <p className="text-4xl font-bold p-2 max-md:text-2xl max-sm:text-xl max-sm:p-0 ">{weatherinfo?.name}</p>
                             </div>
-                            <p className="text-start text-2xl tracking-wider">Weather : {weatherinfo?.weather?.[0]?.main}</p>
-                            <p className="text-start text-2xl tracking-wider">Humidity : {weatherinfo?.main?.humidity}%  <span className="px-2 max-lg:px-0 max-lg:block ">Wind speed : {weatherinfo?.wind?.speed}</span></p>
-                            <p className="text-start text-2xl">  H: {weatherinfo?.main?.temp_max ? weatherinfo.main.temp_max.toFixed(0) : ''}°c <span className="px-3 max-sm:px-0 "> L : {weatherinfo?.main?.temp_min ? weatherinfo.main.temp_min.toFixed(0) : ''}°c</span></p>
+                            <p className="text-start text-2xl tracking-wider max-sm:text-xl">Weather : {weatherinfo?.weather?.[0]?.main}</p>
+                            <p className="text-start text-2xl tracking-wider max-sm:text-xl">Humidity : {weatherinfo?.main?.humidity}%  <span className="px-2 max-lg:px-0 max-lg:block ">Wind speed : {weatherinfo?.wind?.speed}</span></p>
+                            <p className="text-start text-2xl max-sm:text-xl">  H: {weatherinfo?.main?.temp_max ? weatherinfo.main.temp_max.toFixed(0) : ''}°c <span className="px-3 max-sm:px-0 "> L : {weatherinfo?.main?.temp_min ? weatherinfo.main.temp_min.toFixed(0) : ''}°c</span></p>
                         </div>
                     )}
                     {!weatherinfo && <p className="text-center">Loading weather data...</p>}
