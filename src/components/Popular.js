@@ -53,7 +53,7 @@ function Popular() {
 
     return (
         <Swiper
-            spaceBetween={30}
+            spaceBetween={25}
             centeredSlides={true}
             autoplay={{
                 delay: 11500,
