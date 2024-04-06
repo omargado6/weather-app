@@ -37,12 +37,12 @@ function Hero() {
             <div className="hero-overlay bg-opacity-10" style={{ opacity: 1 }}></div>
             <div className="text-center grid grid-cols-4 justify-center items-center h-screen min-w-full">
                 <div className="card shadow-xl col-span-4 mx-auto w-7/12 max-sm:w-4/6 max-h-min pt-5" style={{ backgroundColor: "rgb(33 38 36 / 90%)" }}>
-                    <div className="search-slide w-fit mx-auto ">
+                    <div className="search-slide w-fit max-sm:w-3/4 mx-auto ">
                         <form onSubmit={handleSubmit}>
                             <label className="input input-bordered flex items-center gap-2">
                                 <input
                                     type="text"
-                                    className="grow"
+                                    className="grow max-sm:w-10"
                                     placeholder="search..."
                                     value={city}
                                     onChange={handleInputChange}
