@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import 'daisyui/dist/full.css';
+import "../file.css";
 
-import cairo from "../img/image/cairo.jpg"
-import tokyo from "../img/image/tokyo.jpg"
-import london from "../img/image/london.jpg"
-import makkah from "../img/image/MAKKAH.jpg"
-import nyc from "../img/image/NYC.webp"
-import roma from "../img/image/roma.jpg"
-
-import { Swiper, SwiperSlide } from 'swiper/react';
+import cairo from "../img/image/cairo.jpg";
+import tokyo from "../img/image/tokyo.jpg";
+import london from "../img/image/london.jpg";
+import makkah from "../img/image/MAKKAH.jpg";
+import nyc from "../img/image/NYC.webp";
+import roma from "../img/image/roma.jpg";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import { Autoplay, Pagination, Navigation, A11y } from 'swiper/modules';
+import { SwiperSlide, Swiper } from 'swiper/react';
 
 
 function Popular() {
@@ -56,15 +55,16 @@ function Popular() {
             spaceBetween={30}
             centeredSlides={true}
             autoplay={{
-                delay: 2500,
+                delay: 100500,
                 disableOnInteraction: false,
             }}
             loop={true}
+            navigation={true}
             modules={[Autoplay, Pagination, Navigation, A11y]}
             pagination={{
                 clickable: true,
             }}
-            className="w-full max-w-screen-2xl"
+            className="w-full max-w-screen-2xl "
             breakpoints={{
                 768: {
                     slidesPerView: 2,
@@ -81,7 +81,7 @@ function Popular() {
 
             }}>
             {weather.map((city) => (
-                <SwiperSlide className="mb-7" key={city.id}>
+                <SwiperSlide className="mb-7 p-2" key={city.id}>
                     <div className="card mx-auto shadow-xl image-full w-96 h-64 max-sm:w-72" >
                         <figure className='h-64' ><img src={city.img} alt={city.name} className="w-96" /></figure>
                         <div className="card-body ">
